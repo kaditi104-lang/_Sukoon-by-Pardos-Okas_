@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0d12;
+  --bg-secondary: #10151c;
+  --bg-tertiary: #161e28;
+  --bg-card: rgba(18, 24, 33, 0.75);
+  --bg-card-hover: rgba(26, 35, 48, 0.9);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8b99ad;
+  
+  --gold-primary: #d4af37;
+  --gold-light: #f5e3a9;
+  --gold-dark: #aa841c;
+  --gold-gradient: linear-gradient(135deg, #e6ca65 0%, #d4af37 50%, #aa841c 100%);
+  --gold-border: rgba(212, 175, 55, 0.28);
+  --gold-border-strong: rgba(212, 175, 55, 0.55);
+  --gold-glow: 0 0 25px rgba(212, 175, 55, 0.22);
+}
+
+[data-theme="light"] {
+  --bg-primary: #fcfbf8;
+  --bg-secondary: #f4f0e8;
+  --bg-tertiary: #ece6d9;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  
+  --text-primary: #151a21;
+  --text-secondary: #3b4654;
+  --text-muted: #64748b;
+  
+  --gold-primary: #b38b1d;
+  --gold-light: #d8b449;
+  --gold-dark: #8c6a0c;
+  --gold-gradient: linear-gradient(135deg, #c79e2a 0%, #b38b1d 50%, #8c6a0c 100%);
+  --gold-border: rgba(179, 139, 29, 0.28);
+  --gold-border-strong: rgba(179, 139, 29, 0.6);
+  --gold-glow: 0 4px 20px rgba(179, 139, 29, 0.15);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #d4af37 0%, #fff3b8 45%, #d4af37 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gold-border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--gold-border-strong);
+  background: var(--bg-card-hover);
+  box-shadow: var(--gold-glow);
+}
